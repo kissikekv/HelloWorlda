@@ -124,6 +124,35 @@ class Tasks
         }
         return shape;
     }
+    public static int factorial()
+    {
+        string? input = Console.ReadLine(); 
+        int _arg;
+        bool check = int.TryParse(input, out _arg);
+        if (check)
+        {
+            if (_arg == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                int _i = 1; 
+                int _result = 1;
+                while(_i <= _arg)
+                {
+                    _result *= _i; 
+                    _i++;
+                }
+                return _result;
+            }
+        }
+        else
+        {
+            Console.WriteLine("alo, neverniy format chisla, ono doljno bit' int");
+            return 0;
+        }
+    }
 }
 
 class Program
@@ -139,6 +168,6 @@ class Program
         Console.WriteLine(Tasks.task6(6));
         Tasks.task7();
         Console.WriteLine(Tasks.task8(2, 5));
-
+        Console.WriteLine(Tasks.factorial());
     }
 }
