@@ -183,13 +183,31 @@ class Tasks
          }
          return _substring;
     }
+    public static int BSA(int[] arr, int valueForSearch)
+    {
+        int right = arr.Length, left = 0, mid = (right + left) / 2;
+               
+        while(arr[mid]!= valueForSearch)
+        {
+            if (arr[mid] < valueForSearch)
+            {
+                left = mid;
+                mid = (right + left) / 2;
+            }
+            else
+            {
+                right= mid;
+                mid = (right + left) / 2;                
+            }
+        }
+        return mid;
+    } 
 }
 
 class Program
 {
     public static void Main(string[] args)
-    {
-        
+    {        
         Tasks.task1();
         Tasks.task2();
         Tasks.task3();
@@ -203,6 +221,7 @@ class Program
         arr = Tasks.bubbleSort(arr);
         string str = "cool sample";
         Console.WriteLine(Tasks.substring(str, 2, 4));
-        
+        int[] arr1 = new int[7] {1, 2, 3, 4, 5, 6, 7};  
+        Console.WriteLine(Tasks.BSA(arr1, 4));
     }
 }
