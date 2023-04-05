@@ -17,9 +17,10 @@ class Tasks
     }
     public static void task3() 
     {
-        for(int _i = 1; _i < 10; _i++)
+        int _i = 0;
+        while (_i < 10) 
         {
-            int j = 0;
+            _i++;
         }
     }
 }
