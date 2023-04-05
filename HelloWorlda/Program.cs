@@ -96,11 +96,11 @@ class Program
 {
     public static void Main(string[] args)
     {
-        //var str = Console.ReadLine();
-        //Tasks.task1(str);
-        //Tasks.task2();
-        //Tasks.task3();
-        //Console.WriteLine(Tasks.task4(6));
+        var str = Console.ReadLine();
+        Tasks.task1(str);
+        Tasks.task2();
+        Tasks.task3();
+        Console.WriteLine(Tasks.task4(6));
         Tasks.task4();
     }
 }
