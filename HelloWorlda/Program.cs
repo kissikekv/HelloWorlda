@@ -104,6 +104,26 @@ class Tasks
         _a = _a - _b;
         Console.WriteLine($"a = {_a} b = {_b}");
     }
+    public static string task8(double rad, double side)
+    {
+        string shape;
+        if((Math.PI * Math.Pow(rad, 2)) > (Math.Pow(side, 2)))
+        {
+            shape = "circle";
+        }
+        else
+        { 
+            if (Math.PI * Math.Pow(rad, 2) < Math.Pow(side, 2))
+            {
+                shape = "circle";
+            }
+            else
+            {
+                shape = "the areas are the same";
+            }
+        }
+        return shape;
+    }
 }
 
 class Program
@@ -118,5 +138,7 @@ class Program
         Tasks.task4();
         Console.WriteLine(Tasks.task6(6));
         Tasks.task7();
+        Console.WriteLine(Tasks.task8(2, 5));
+
     }
 }
