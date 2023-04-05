@@ -151,7 +151,28 @@ class Tasks
         {
             Console.WriteLine("alo, neverniy format chisla, ono doljno bit' int");
             return 0;
+        }        
+    }
+    public static int[] bubbleSort(int[] arr)
+    {
+        for (int _i = 0; _i < arr.Length - 1; _i++)
+        {
+            for (int _j = 0; _j < arr.Length - 1; _j++)
+            {
+                if (arr[_j] >= arr[_j + 1])
+                {
+                    int q;
+                    q = arr[_j];
+                    arr[_j] = arr[_j + 1];
+                    arr[_j + 1] = q;
+                }
+            }
         }
+        for (int _i = 0; _i < arr.Length; _i++)
+        {
+            Console.WriteLine(arr[_i]);
+        }
+        return arr;
     }
 }
 
@@ -160,7 +181,7 @@ class Program
     public static void Main(string[] args)
     {
         
-        Tasks.task1();
+        /*Tasks.task1();
         Tasks.task2();
         Tasks.task3();
         Console.WriteLine(Tasks.task4(6));
@@ -168,6 +189,9 @@ class Program
         Console.WriteLine(Tasks.task6(6));
         Tasks.task7();
         Console.WriteLine(Tasks.task8(2, 5));
-        Console.WriteLine(Tasks.factorial());
+        Console.WriteLine(Tasks.factorial());*/
+        int[] arr = new int[6] {1, 5, 6, 7, 1, 8};       
+        arr = Tasks.bubbleSort(arr);
+        
     }
 }
