@@ -174,6 +174,15 @@ class Tasks
         }
         return arr;
     }
+    public static string substring(string str, int startIndex, int substrinLength)
+    {
+         string _substring = "";
+         for (int _i = startIndex; _i < startIndex + substrinLength; _i++)
+         {
+            _substring += str[_i];
+         }
+         return _substring;
+    }
 }
 
 class Program
@@ -181,7 +190,7 @@ class Program
     public static void Main(string[] args)
     {
         
-        /*Tasks.task1();
+        Tasks.task1();
         Tasks.task2();
         Tasks.task3();
         Console.WriteLine(Tasks.task4(6));
@@ -189,9 +198,11 @@ class Program
         Console.WriteLine(Tasks.task6(6));
         Tasks.task7();
         Console.WriteLine(Tasks.task8(2, 5));
-        Console.WriteLine(Tasks.factorial());*/
+        Console.WriteLine(Tasks.factorial());
         int[] arr = new int[6] {1, 5, 6, 7, 1, 8};       
         arr = Tasks.bubbleSort(arr);
+        string str = "cool sample";
+        Console.WriteLine(Tasks.substring(str, 2, 4));
         
     }
 }
