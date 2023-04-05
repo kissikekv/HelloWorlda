@@ -7,7 +7,14 @@ class Tasks
         {
             Console.WriteLine(str[_i]);
         }
-    } 
+    }
+    public static void task2() 
+    {
+        for(int _i = 1; _i < 10; _i++)
+        {
+            Console.WriteLine($"{_i} x 7 = {7 * _i}");
+        }
+    }
 }
 
 class Program
@@ -16,5 +23,6 @@ class Program
     {
         var str = Console.ReadLine();
         Tasks.task1(str);
+        Tasks.task2();
     }
 }
