@@ -95,7 +95,15 @@ class Tasks
         double _answer = (12 * Math.Pow(a, 2)) + 7 * a + 12;
         return _answer;
     }
-
+    public static void task7()
+    {
+        int _a = 3;
+        int _b = 6; 
+        _a = _b + _a;
+        _b = _a - _b;
+        _a = _a - _b;
+        Console.WriteLine($"a = {_a} b = {_b}");
+    }
 }
 
 class Program
@@ -109,5 +117,6 @@ class Program
         Console.WriteLine(Tasks.task4(6));
         Tasks.task4();
         Console.WriteLine(Tasks.task6(6));
+        Tasks.task7();
     }
 }
