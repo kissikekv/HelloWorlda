@@ -47,16 +47,60 @@ class Tasks
         }
         else return _result;
     }
+    public static void task4() 
+    {
+        for(int _i = 0; _i < 5; _i++)
+        {
+            for(int _j = 5 - _i; _j <= 5; _j++)
+            {
+                Console.Write("5 ");
+            }
+            Console.WriteLine();
+        }
+
+        for(int _i = 0; _i < 5; _i++)
+        {
+            for(int _j = 1; _j <= 5 - _i; _j++)
+            {
+                Console.Write("1 ");
+            }
+            Console.WriteLine();
+        }
+
+        int _temp = 0;
+        for(int _i = 0; _i < 5; _i++)
+        {
+             _temp++; 
+            for(int _j = 5 - _i; _j <= 5; _j++)
+            {
+                Console.Write($"{_temp * 10} ");
+            }
+            Console.WriteLine();
+        }
+        
+        _temp = 0;
+        for(int _i = 0; _i < 5; _i++)
+        {
+            _temp++;
+            for(int _j = 1; _j <= 5 - _i; _j++)
+            {
+                Console.Write($"{_temp * 5} ");
+            }
+            Console.WriteLine();
+        }
+    }
+
 }
 
 class Program
 {
     public static void Main(string[] args)
     {
-        var str = Console.ReadLine();
-        Tasks.task1(str);
-        Tasks.task2();
-        Tasks.task3();
-        Console.WriteLine(Tasks.task4(6));
+        //var str = Console.ReadLine();
+        //Tasks.task1(str);
+        //Tasks.task2();
+        //Tasks.task3();
+        //Console.WriteLine(Tasks.task4(6));
+        Tasks.task4();
     }
 }
