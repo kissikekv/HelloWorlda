@@ -3,8 +3,9 @@
 namespace HelloWorld;
 class Tasks
 {
-    public static void task1(string str) 
+    public static void task1() 
     {
+        var str = Console.ReadLine();
         for(int _i = 0; _i < str.Length; _i++)
         {
             Console.WriteLine(str[_i]);
@@ -89,6 +90,11 @@ class Tasks
             Console.WriteLine();
         }
     }
+    public static double task6(int a)
+    {
+        double _answer = (12 * Math.Pow(a, 2)) + 7 * a + 12;
+        return _answer;
+    }
 
 }
 
@@ -96,11 +102,12 @@ class Program
 {
     public static void Main(string[] args)
     {
-        var str = Console.ReadLine();
-        Tasks.task1(str);
+        
+        Tasks.task1();
         Tasks.task2();
         Tasks.task3();
         Console.WriteLine(Tasks.task4(6));
         Tasks.task4();
+        Console.WriteLine(Tasks.task6(6));
     }
 }
