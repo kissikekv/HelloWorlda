@@ -204,13 +204,18 @@ class Tasks
     }
     public static int[] filterDigit(int[] arr, int valueForSearch)
     {
-        int _counter = 0;
-
+        int _counter = 0, _lastNumber = 0;
+        
         for (int _i = 0; _i < arr.Length; _i++)
         {
-            string _tempstring;
-            _tempstring = Convert.ToString(arr[_i]);
-            if (_tempstring.Contains(Convert.ToString(valueForSearch))) _counter++;
+            int _tempInt = arr[_i];
+            while((_tempInt != 0) & (_lastNumber != valueForSearch))
+            {                
+                _lastNumber = _tempInt % 10;                
+                _tempInt /= 10;
+                if(_lastNumber == valueForSearch)_counter++;                
+            }
+            _lastNumber = 0;
         }
 
         int[] _arr = new int[_counter];
@@ -218,20 +223,25 @@ class Tasks
 
         for (int _i = 0; _i < arr.Length; _i++)
         {
-            string _tempstring;
-            _tempstring = Convert.ToString(arr[_i]);
-            if (_tempstring.Contains(Convert.ToString(valueForSearch)))
-            {               
-                _arr[_temp] = arr[_i];
-                _temp++;
-            } 
+            int _tempInt = arr[_i];
+            while((_tempInt != 0) & (_lastNumber != valueForSearch))
+            {
+                _lastNumber = _tempInt % 10;
+                _tempInt /= 10;
+                if(_lastNumber == valueForSearch)
+                {
+                    _arr[_temp] = arr[_i];
+                    _temp++;
+                }                               
+            }
+            _lastNumber = 0;
         }
 
-        /*for (int _i = 0; _i < _arr.Length; _i++)
+        for (int _i = 0; _i < _arr.Length; _i++)
         {
             Console.WriteLine(_arr[_i]);
-        }*/
-
+        }
+        
         return _arr;
     }
 }
@@ -240,7 +250,7 @@ class Program
 {
     public static void Main(string[] args)
     {        
-        Tasks.task1();
+        /*asks.task1();
         Tasks.task2();
         Tasks.task3();
         Console.WriteLine(Tasks.task4(6));
@@ -254,7 +264,7 @@ class Program
         string str = "cool sample";
         Console.WriteLine(Tasks.substring(str, 2, 4));
         int[] arr1 = new int[7] {1, 2, 3, 4, 5, 6, 7};  
-        Console.WriteLine(Tasks.BSA(arr1, 4));
+        Console.WriteLine(Tasks.BSA(arr1, 4));*/
         int[] arr2 = new int[7] {1, 13, 4, 65, 123, 5, 119};
         Tasks.filterDigit(arr2, 1);
     }
