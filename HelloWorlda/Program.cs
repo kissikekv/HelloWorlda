@@ -201,7 +201,39 @@ class Tasks
             }
         }
         return mid;
-    } 
+    }
+    public static int[] filterDigit(int[] arr, int valueForSearch)
+    {
+        int _counter = 0;
+
+        for (int _i = 0; _i < arr.Length; _i++)
+        {
+            string _tempstring;
+            _tempstring = Convert.ToString(arr[_i]);
+            if (_tempstring.Contains(Convert.ToString(valueForSearch))) _counter++;
+        }
+
+        int[] _arr = new int[_counter];
+        int _temp = 0;
+
+        for (int _i = 0; _i < arr.Length; _i++)
+        {
+            string _tempstring;
+            _tempstring = Convert.ToString(arr[_i]);
+            if (_tempstring.Contains(Convert.ToString(valueForSearch)))
+            {               
+                _arr[_temp] = arr[_i];
+                _temp++;
+            } 
+        }
+
+        /*for (int _i = 0; _i < _arr.Length; _i++)
+        {
+            Console.WriteLine(_arr[_i]);
+        }*/
+
+        return _arr;
+    }
 }
 
 class Program
@@ -223,5 +255,7 @@ class Program
         Console.WriteLine(Tasks.substring(str, 2, 4));
         int[] arr1 = new int[7] {1, 2, 3, 4, 5, 6, 7};  
         Console.WriteLine(Tasks.BSA(arr1, 4));
+        int[] arr2 = new int[7] {1, 13, 4, 65, 123, 5, 119};
+        Tasks.filterDigit(arr2, 1);
     }
 }
